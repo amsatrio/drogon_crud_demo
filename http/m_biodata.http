@@ -1,0 +1,58 @@
+@base_url=http://localhost:8080
+
+### page
+GET {{base_url}}/v1/m-biodata?page=200&size=5
+
+### sort
+GET {{base_url}}/v1/m-biodata?sort=[{"id":"fullname", "desc":true}]
+
+### filter
+GET {{base_url}}/v1/m-biodata?filter=[{"id":"fullname", "value":"3", "matchMode": "CONTAINS", "dataType": "TEXT", "mode": "AND"}]
+
+### index
+GET {{base_url}}/v1/m-biodata/1003
+
+### new
+POST {{base_url}}/v1/m-biodata
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="fullname"
+
+my-name 2
+--boundary123
+Content-Disposition: form-data; name="mobilePhone"
+
+084321829345
+--boundary123
+Content-Disposition: form-data; name="image"; filename="androidparty.png"
+Content-Type: image/jpeg
+
+< /home/user0/Pictures/tes.jpg
+--boundary123--
+
+### update
+PUT {{base_url}}/v1/m-biodata
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="id"
+
+1003
+--boundary123
+Content-Disposition: form-data; name="fullname"
+
+my-name update
+--boundary123
+Content-Disposition: form-data; name="mobilePhone"
+
+084321829345
+--boundary123
+Content-Disposition: form-data; name="image"; filename="androidparty.png"
+Content-Type: image/jpeg
+
+< /home/user0/Pictures/selfie.jpg
+--boundary123--
+
+### delete
+DELETE {{base_url}}/v1/m-biodata/1

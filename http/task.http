@@ -1,0 +1,23 @@
+@base_url=http://localhost:8080
+@id=6
+
+### all
+GET {{base_url}}/tasks
+
+### find by id
+GET {{base_url}}/tasks/{{id}}
+
+### create
+POST {{base_url}}/tasks
+Content-Type: application/json
+
+{"title": "created task name"}
+
+### update
+PUT {{base_url}}/tasks/{{id}}
+Content-Type: application/json
+
+{"title": "updated task name"}
+
+### delete
+DELETE {{base_url}}/tasks/{{id}}

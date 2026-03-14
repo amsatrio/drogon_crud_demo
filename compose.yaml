@@ -1,0 +1,11 @@
+services:
+  drogon_crud_demo:
+    container_name: drogon_crud_demo
+    build: .
+    image: drogon-crud-demo:distroless
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DROGON_ENV=production
