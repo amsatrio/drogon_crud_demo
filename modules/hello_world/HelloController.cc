@@ -1,8 +1,5 @@
 #include "HelloController.h"
 #include "models/response/ApiResponse.h"
-#include <drogon/HttpRequest.h>
-#include <drogon/HttpResponse.h>
-#include <drogon/HttpTypes.h>
 
 void HelloController::helloWorld(const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback) {
   callback(ApiResponse::ok(req->getPath(), "Hello, World!"));
