@@ -64,17 +64,17 @@ db_clients:
     # For more information, see https://www.postgresql.org/docs/16/libpq-connect.html#LIBPQ-CONNECT-OPTIONS
     # connect_options:
     #   statement_timeout: '1s'
-  - name: mysql
+  - name: postgresql
     # rdbms: Server type, postgresql,mysql or sqlite3, "postgresql" by default
-    rdbms: mysql
+    rdbms: postgresql
     # filename: Sqlite3 db file name
     # filename: ./data/sqlite.db
     # host: Server address,localhost by default
-    host: 127.0.0.1
+    host: optiplex3050.tailb8a972.ts.net
     # port: Server port, 5432 by default
-    port: 3306
+    port: 5432
     # dbname: Database name
-    dbname: db-hospital
+    dbname: db_hospital
     # user: 'postgres' by default
     user: 'user_local'
     # passwd: '' by default
@@ -123,7 +123,7 @@ db_clients:
 app:
   # number_of_threads: The number of IO threads, 1 by default, if the value is set to 0, the number of threads
   # is the number of CPU cores
-  number_of_threads: 1
+  number_of_threads: 0
   # enable_session: False by default
   enable_session: false
   session_timeout: 0
@@ -244,7 +244,7 @@ app:
     max_files: 0
     # log_level: "DEBUG" by default,options:"TRACE","DEBUG","INFO","WARN"
     # The TRACE level is only valid when built in DEBUG mode.
-    log_level: DEBUG
+    log_level: FATAL
     # display_local_time: false by default, if true, the log time is displayed in local time
     display_local_time: false
   # run_as_daemon: False by default
