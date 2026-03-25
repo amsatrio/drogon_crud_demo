@@ -52,6 +52,8 @@ aux_source_directory(models/request REQUEST_SOURCES)
 aux_source_directory(models/response RESPONSE_SOURCES)
 aux_source_directory(modules/hello_world HELLO_WORLD_MODULE_SOURCES)
 aux_source_directory(modules/task TASK_MODULE_SOURCES)
+aux_source_directory(modules/hospital/models HOSPITAL_MODELS_MODULE_SOURCES)
+aux_source_directory(modules/hospital/controllers HOSPITAL_CONTROLLERS_MODULE_SOURCES)
 
 drogon_create_views(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/views
                     ${CMAKE_CURRENT_BINARY_DIR})
@@ -76,11 +78,12 @@ target_sources(${PROJECT_NAME}
                ${REQUEST_SOURCES}
                ${RESPONSE_SOURCES}
                ${HELLO_WORLD_MODULE_SOURCES}
-               ${TASK_MODULE_SOURCES})
+               ${TASK_MODULE_SOURCES}
+               ${HOSPITAL_MODELS_MODULE_SOURCES}
+               ${HOSPITAL_CONTROLLERS_MODULE_SOURCES})
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/models/request)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/models/response)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/models/entity)
 # ##############################################################################
 # uncomment the following line for dynamically loading views 
 # set_property(TARGET ${PROJECT_NAME} PROPERTY ENABLE_EXPORTS ON)
