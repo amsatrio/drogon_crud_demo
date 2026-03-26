@@ -1,7 +1,7 @@
 @base_url=http://localhost:8080
 
 ### page
-GET {{base_url}}/v1/m-biodata?page=200&size=5
+GET {{base_url}}/v1/m-biodata?page=0&size=5
 
 ### sort
 GET {{base_url}}/v1/m-biodata?sort=[{"id":"fullname", "desc":true}]
