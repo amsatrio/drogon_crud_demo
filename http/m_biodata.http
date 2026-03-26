@@ -10,7 +10,7 @@ GET {{base_url}}/v1/m-biodata?sort=[{"id":"fullname", "desc":true}]
 GET {{base_url}}/v1/m-biodata?filter=[{"id":"fullname", "value":"3", "matchMode": "CONTAINS", "dataType": "TEXT", "mode": "AND"}]
 
 ### index
-GET {{base_url}}/v1/m-biodata/1003
+GET {{base_url}}/v1/m-biodata/1000
 
 ### new
 POST {{base_url}}/v1/m-biodata
